@@ -238,6 +238,19 @@ p { text-wrap: pretty; }
 }
 .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
+/* Cross-brand modifier: ghost button points back to Veritas Ventures, so
+   paint its hover state in the Ventures orange rather than Builders blue.
+   The text/border tint a little orange even at rest so the parent-brand
+   reference reads clearly. */
+.btn-ghost.btn-ventures {
+  color: var(--vv-accent);
+  border-color: color-mix(in srgb, var(--vv-accent) 55%, transparent);
+}
+.btn-ghost.btn-ventures:hover {
+  border-color: var(--vv-accent);
+  color: var(--vv-accent-hover);
+}
+
 .nav-toggle { display: none; }
 
 /* ============================================================
