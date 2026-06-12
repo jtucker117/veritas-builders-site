@@ -728,14 +728,16 @@ img.blog-hero {
   color: var(--text-soft);
 }
 
-/* Page-transition link back to ventures from builders */
+/* Page-transition link back to Veritas Ventures from any Builders page.
+   Uses the Ventures brand orange directly (not the Builders blue) so the
+   link visually advertises the parent brand it points at. */
 .back-link {
   font-size: var(--text-sm);
-  font-weight: 500;
-  color: var(--text-soft);
+  font-weight: 600;
+  color: var(--vv-accent);
   display: inline-flex; align-items: center; gap: 6px;
 }
-.back-link:hover { color: var(--accent); }
+.back-link:hover { color: var(--vv-accent-hover); }
 
 /* ============================================================
    TEXAS SERVICE-AREA MAP
