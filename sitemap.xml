@@ -40,6 +40,13 @@
     <loc>https://veritasbuilderstx.com/blog/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://veritasbuilderstx.com/blog/houston-kitchen-remodel-cost-2026</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
 
@@ -47,7 +54,35 @@
     <loc>https://veritasbuilderstx.com/blog/houston-bathroom-remodel-cost-2026</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://veritasbuilderstx.com/blog/houston-home-addition-cost-2026</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://veritasbuilderstx.com/blog/how-to-choose-a-contractor-in-houston</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://veritasbuilderstx.com/blog/signs-you-need-a-new-roof-in-texas</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://veritasbuilderstx.com/blog/what-to-expect-whole-home-renovation</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 
 </urlset>

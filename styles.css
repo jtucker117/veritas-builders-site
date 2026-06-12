@@ -576,6 +576,71 @@ p { text-wrap: pretty; }
 }
 
 /* ============================================================
+   BLOG — hero banner + inline figure placeholders
+   ============================================================ */
+.blog-hero {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: var(--space-6) 0 var(--space-8);
+  background:
+    radial-gradient(ellipse at 25% 30%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 60%),
+    radial-gradient(ellipse at 75% 70%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
+    var(--panel);
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--border-soft);
+}
+.blog-hero::after {
+  /* Subtle "drop a real photo here" hint — invisible-feeling but professional. */
+  content: "VERITAS BUILDERS";
+  font-size: var(--text-xs);
+  letter-spacing: 0.35em;
+  color: var(--text-faint);
+  position: absolute; bottom: 12px; right: 16px;
+}
+.blog-hero img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Inline figure inside article body — same brand-on-brand styling. */
+.blog-figure {
+  margin: var(--space-8) 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border-soft);
+  background: var(--panel);
+}
+.blog-figure img { width: 100%; height: auto; display: block; }
+.blog-figure.placeholder {
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%),
+    var(--panel);
+  display: grid;
+  place-items: center;
+}
+.blog-figure.placeholder::after {
+  content: attr(data-label);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--text-faint);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0 var(--space-6);
+  text-align: center;
+}
+.blog-figcaption {
+  font-size: var(--text-xs);
+  color: var(--text-faint);
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ============================================================
    COMING SOON BADGE (divisions)
    ============================================================ */
 .badge-soon {
