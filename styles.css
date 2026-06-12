@@ -577,33 +577,43 @@ p { text-wrap: pretty; }
 
 /* ============================================================
    BLOG — hero banner + inline figure placeholders
+   Two variants of the same class:
+   - <div class="blog-hero"> renders a fixed 16:7 branded placeholder
+   - <img class="blog-hero"> renders the real photo at its natural ratio
+     (with a generous max-height so a tall photo doesn't blow up the page).
    ============================================================ */
 .blog-hero {
   position: relative;
-  aspect-ratio: 16 / 7;
   width: 100%;
   border-radius: var(--radius);
   overflow: hidden;
   margin: var(--space-6) 0 var(--space-8);
+  border: 1px solid var(--border-soft);
+  display: block;
+}
+/* Placeholder div — fixed banner aspect with brand-accent glow. */
+div.blog-hero {
+  aspect-ratio: 16 / 7;
   background:
     radial-gradient(ellipse at 25% 30%, color-mix(in srgb, var(--accent) 35%, transparent), transparent 60%),
     radial-gradient(ellipse at 75% 70%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 60%),
     var(--panel);
   display: grid;
   place-items: center;
-  border: 1px solid var(--border-soft);
 }
-.blog-hero::after {
-  /* Subtle "drop a real photo here" hint — invisible-feeling but professional. */
+div.blog-hero::after {
   content: "VERITAS BUILDERS";
   font-size: var(--text-xs);
   letter-spacing: 0.35em;
   color: var(--text-faint);
   position: absolute; bottom: 12px; right: 16px;
 }
-.blog-hero img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
+/* Real-photo variant — natural ratio, capped so a portrait shot doesn't dominate. */
+img.blog-hero {
+  height: auto;
+  max-height: 560px;
+  object-fit: cover;
+  background: var(--panel);
 }
 
 /* Inline figure inside article body — same brand-on-brand styling. */
