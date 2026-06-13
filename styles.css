@@ -618,8 +618,13 @@ p { text-wrap: pretty; }
 .project-meta {
   /* Match the inner padding of .card tiles so the text under a project
      image has the same breathing room from the box edges as the rest
-     of the site's tiles (services, blog index, etc.). */
-  padding: var(--space-6) var(--space-8) var(--space-7);
+     of the site's tiles (services, blog index, etc.).
+
+     Note: only --space-6 / --space-8 are used here. --space-7 was
+     tried earlier and silently broke the rule because it's not
+     defined in the spacing scale — CSS invalidates the whole shorthand
+     when one of its custom-property references is missing. */
+  padding: var(--space-6) var(--space-8);
 }
 .project-meta .project-tag {
   font-size: var(--text-xs);
