@@ -452,22 +452,14 @@ p { text-wrap: pretty; }
   display: block;
 }
 
-/* Thumbnail-style card — used on the blog index and anywhere we want a
-   project-gallery look (photo on top, tighter text section underneath).
-   Mirrors the .project / .project-meta styling so all "image + meta"
-   cards across the site read the same: small accent tag, base-size
-   title that fits the card width, soft-color description.
-
-   Reset the .card defaults that fit a text-only services tile but feel
-   oversized on a card with a hero image. */
-.card.has-thumb {
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-.card.has-thumb .card-thumb {
+/* Thumbnail strip at the top of a blog card. Bleeds to the card edges
+   (negates the card's inner padding) so it reads as a hero. 16/9 ratio
+   keeps the cards visually consistent in the grid even when source
+   images differ in aspect ratio. */
+.card.has-thumb { padding-top: 0; }
+.card .card-thumb {
   display: block;
-  margin: 0;
+  margin: 0 calc(-1 * var(--space-8)) var(--space-6);
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: linear-gradient(135deg,
@@ -475,42 +467,16 @@ p { text-wrap: pretty; }
     color-mix(in srgb, var(--accent) 8%, var(--panel)));
   position: relative;
 }
-.card.has-thumb .card-thumb img {
+.card .card-thumb img {
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
   transition: transform 0.5s var(--ease);
 }
-.card.has-thumb:hover .card-thumb img { transform: scale(1.04); }
-
-/* Tighter typography inside a thumbnailed card so titles like 'How to
-   Choose a Contractor in Greater Houston' don't break one-word-per-line
-   in the narrow column. Matches .project-meta. */
-.card.has-thumb > :not(.card-thumb) { padding-inline: var(--space-6); }
-.card.has-thumb .card-tag {
-  font-size: var(--text-xs);
-  letter-spacing: 0.14em;
-  color: var(--accent);
-  margin: var(--space-5) 0 6px;
-}
-.card.has-thumb h3 {
-  font-size: var(--text-base);
-  font-weight: 600;
-  line-height: 1.3;
-  margin: 0 0 var(--space-3);
-}
-.card.has-thumb p {
-  font-size: var(--text-sm);
-  line-height: 1.55;
-  margin: 0 0 var(--space-4);
-}
-.card.has-thumb .card-link {
-  margin-bottom: var(--space-6);
-}
-
+.card:hover .card-thumb img { transform: scale(1.04); }
 /* Placeholder variant — no <img>, just the gradient with a faint
    grid pattern and a small "Cover image coming soon" label. */
-.card.has-thumb .card-thumb.placeholder::after {
+.card .card-thumb.placeholder::after {
   content: "Cover image coming soon";
   position: absolute;
   inset: 0;
@@ -650,7 +616,10 @@ p { text-wrap: pretty; }
   background: var(--bg);
 }
 .project-meta {
-  padding: var(--space-5) var(--space-6);
+  /* Match the inner padding of .card tiles so the text under a project
+     image has the same breathing room from the box edges as the rest
+     of the site's tiles (services, blog index, etc.). */
+  padding: var(--space-6) var(--space-8) var(--space-7);
 }
 .project-meta .project-tag {
   font-size: var(--text-xs);
