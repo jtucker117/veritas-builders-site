@@ -21,6 +21,19 @@ const app = express();
 // Bumped to 10mb so the chat can carry a few base64 photos in one request.
 app.use(express.json({ limit: '10mb' }));
 
+// Canonical-host 301 redirect: bare veritasbuilderstx.com -> www.
+// Railway routes both custom domains to this service; we redirect in code
+// because Railway's custom-domain UI doesn't expose a redirect toggle.
+// Trust the proxy so req.protocol and req.hostname reflect the original
+// request (Railway terminates TLS in front of the container).
+app.set('trust proxy', true);
+app.use((req, res, next) => {
+  if (req.hostname === 'veritasbuilderstx.com') {
+    return res.redirect(301, `https://www.veritasbuilderstx.com${req.originalUrl}`);
+  }
+  next();
+});
+
 const PORT = process.env.PORT || 3000;
 const LEAD_TO = process.env.LEAD_TO || 'info@veritasgrouptx.com';
 const HAS_AI = !!process.env.ANTHROPIC_API_KEY;
