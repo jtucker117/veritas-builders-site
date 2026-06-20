@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://veritasbuilderstx.com/sitemap.xml
+Sitemap: https://www.veritasbuilderstx.com/sitemap.xml
