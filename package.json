@@ -4,7 +4,8 @@
   "description": "Veritas Builders — Texas general contractor marketing site (veritasbuilderstx.com)",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "draft": "node .pipeline/draft-blog-post.js"
   },
   "engines": {
     "node": ">=18"

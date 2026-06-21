@@ -33,7 +33,7 @@ neighborhood + service. Avoid putting dollar amounts in the body.
 
 | # | Slug | Intent | Diff | Status |
 |---|---|---|---|---|
-| 1 | kitchen-remodel-magnolia-tx-what-to-expect | local + informational | L | queued |
+| 1 | kitchen-remodel-magnolia-tx-what-to-expect | local + informational | L | published |
 | 2 | kitchen-remodel-the-woodlands-tx-guide | local | L | queued |
 | 3 | kitchen-remodel-cypress-tx-guide | local | L | queued |
 | 4 | kitchen-remodel-tomball-tx-guide | local | L | queued |
@@ -191,7 +191,7 @@ so the existing commercial posts have internal links pointing in.
 
 | # | Slug | Intent | Diff | Status |
 |---|---|---|---|---|
-| 98 | commercial-site-development-process-overview | informational | M | queued |
+| 98 | commercial-site-development-process-overview | informational | M | published |
 | 99 | how-to-bid-a-commercial-site-development-project | informational | L | queued |
 | 100 | retail-pad-site-development-houston-considerations | informational + local | L | queued |
 | 101 | warehouse-pad-site-prep-greater-houston | informational + local | L | queued |
