@@ -28,6 +28,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <!-- Favicons -->
   <link rel="icon" href="favicon.ico" sizes="any" />
@@ -175,8 +176,11 @@
 
     <!-- ================= HERO ================= -->
     <section class="hero">
-      <div class="hero-bg"></div>
-      <div class="hero-grid"></div>
+      <!-- Animated architectural blueprint background (canvas). Draws a floor
+           plan, elevation, and title block that gently draft in/out. -->
+      <div class="veritas-bp" data-line-color="#dfe9f5" data-accent-color="#5f95cf" data-intensity="0.8">
+        <canvas></canvas>
+      </div>
       <div class="container hero-inner hero-split">
         <div class="hero-logo-col">
           <img class="hero-logo" src="images/veritas-builders-logo.png" alt="Veritas Builders" />
@@ -513,6 +517,7 @@
     <p class="chat-disclaimer">AI assistant · may make mistakes · we&rsquo;ll follow up personally</p>
   </div>
 
+  <script src="blueprint-bg.js"></script>
   <script src="main.js"></script>
   <script src="map.js"></script>
   <script src="chat.js"></script>
