@@ -199,7 +199,8 @@ p { text-wrap: pretty; }
 .nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: clamp(1.75rem, 5vw, 3.5rem);
   height: 72px;
 }
 .nav-links {
@@ -1110,6 +1111,8 @@ html.js .reveal.in { opacity: 1; transform: none; }
    ============================================================ */
 @media (max-width: 860px) {
   .about-grid { grid-template-columns: 1fr; }
+  /* Mobile keeps logo-left / toggle-right — the menu is a fixed dropdown. */
+  .nav { justify-content: space-between; gap: 0; }
   .hero-split { grid-template-columns: 1fr; gap: var(--space-6); text-align: left; }
   .hero-logo-col { justify-content: flex-start; }
   .hero-logo { max-width: 200px; }
