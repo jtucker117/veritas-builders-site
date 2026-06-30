@@ -39,6 +39,10 @@
       function add(polys,period,offset,opt){ opt=opt||{}; figs.push({polys:polys,period:period,offset:offset,width:opt.width||1.1,accent:!!opt.accent,maxAlpha:opt.maxAlpha==null?0.85:opt.maxAlpha,labels:opt.labels||[]}); }
       var i,j;
 
+      // On phones the drawings sit right behind the headline and read as
+      // clutter — keep only the navy backdrop + faint animated grid there.
+      if (W < 720) return;
+
       // ===== A. Main level — detailed floor plan (upper-left) =====
       (function(){
         var pw=Math.min(W*0.30,400), h1=Math.min(H*0.30,220), h2=Math.min(H*0.34,250);
