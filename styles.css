@@ -326,7 +326,14 @@ p { text-wrap: pretty; }
   z-index: 0;
   background: radial-gradient(140% 120% at 50% -10%, #16304b 0%, #0c1a2c 46%, #07101b 100%);
 }
-.veritas-bp canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+/* Desktop shows ~5 overlapping drawings, so dim the whole layer hard. */
+.veritas-bp canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0.4; }
+/* Mobile shows only the single centered elevation, which sits behind the hero
+   copy. Render it as a faint ghost so it reads as texture, not clutter — the
+   hero text-shadow keeps the headline + lead crisp on top. */
+@media (max-width: 719px) {
+  .veritas-bp canvas { opacity: 0.35; }
+}
 .veritas-bp::after {
   content: "";
   position: absolute;
@@ -356,6 +363,16 @@ p { text-wrap: pretty; }
   margin-bottom: var(--space-6);
 }
 .hero h1 .accent { color: var(--accent); }
+
+/* Lift hero copy off the animated blueprint so the words pop. A soft dark halo
+   masks the linework directly behind each glyph. Scoped to the marketing hero
+   (service-page heroes are calmer and don't need it). */
+.hero:not(.service-hero) .eyebrow,
+.hero:not(.service-hero) h1,
+.hero:not(.service-hero) .hero-lead,
+.hero:not(.service-hero) .tagline-strip {
+  text-shadow: 0 1px 2px rgba(6, 13, 22, 0.55), 0 2px 24px rgba(6, 13, 22, 0.85);
+}
 
 /* Service landing pages: single-column hero, tighter H1 + lead. The marketing
    hero on builders.html scales the H1 up to 96px because it's in a 2-column
